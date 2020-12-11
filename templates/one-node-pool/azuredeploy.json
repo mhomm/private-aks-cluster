@@ -857,7 +857,7 @@
     },
     {
       "type": "Microsoft.ContainerService/managedClusters",
-      "apiVersion": "2020-07-01",
+      "apiVersion": "2020-11-01",
       "name": "[parameters('aksClusterName')]",
       "location": "[parameters('location')]",
       "identity": {
@@ -1100,5 +1100,11 @@
         ]
       }
     }
-  ]
+  ],
+  "outputs": {
+    "privateFQDN": {
+      "type": "string",
+      "value": "[reference(parameters('aksClusterName')).privateFQDN]"
+    }
+  }
 }
